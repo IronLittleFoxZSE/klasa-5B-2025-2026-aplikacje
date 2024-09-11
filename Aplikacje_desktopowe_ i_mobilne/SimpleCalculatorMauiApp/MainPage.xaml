@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SimpleCalculatorMauiApp.MainPage">
+    
+    <ScrollView>
+        <VerticalStackLayout 
+            Spacing="10">
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Pierwsza liczba:"
+                       VerticalOptions="Center"
+                       Background="Aquamarine"/>
+                <Entry HorizontalOptions="FillAndExpand"
+                       Placeholder="Tutaj wpisz pierwszą liczbę"
+                       x:Name="firstNumberEntry"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Druga liczba:"
+                       VerticalOptions="Center"
+                       Background="Aquamarine"/>
+                <Entry HorizontalOptions="FillAndExpand"
+                       Placeholder="Tutaj wpisz drugą liczbę"
+                       x:Name="secondNumberEntry"/>
+            </StackLayout>
+
+            <Label Text="Opcje:"
+                   FontSize="20"
+                   FontFamily="Arial"
+                   FontAttributes="Bold"/>
+
+            <RadioButton Content="+"
+                         x:Name="operationAddRadioButton"/>
+            <RadioButton Content="-"
+                         x:Name="operationSubRadioButton"/>
+            <RadioButton Content="*"
+                         x:Name="operationMulRadioButton"/>
+            <RadioButton Content="/"
+                         x:Name="operationDivRadioButton"/>
+
+            <Button Text="Oblicz"
+                    HorizontalOptions="Center"
+                    WidthRequest="200"
+                    HeightRequest="100"
+                    FontSize="40"
+                    Background="BurlyWood"
+                    Clicked="Button_Clicked"/>
+
+            <Label x:Name="resultLabel"/>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
