@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BindingRotationMauiApp.MainPage"
+             x:Name="thisPage"
+             BindingContext="{x:Reference thisPage}">
+
+    <ScrollView>
+        <StackLayout
+            Spacing="25"
+            Padding="30,0">
+
+            <Slider Minimum="0"
+                    Maximum="360"
+                    MinimumTrackColor="Red"
+                    MaximumTrackColor="Green"
+                    ThumbColor="Black"
+                    x:Name="levelSlider"
+                    ValueChanged="levelSlider_ValueChanged"/>
+
+            <Label x:Name="messageLabel"/>
+            <Label Text="{Binding Source={x:Reference levelSlider},Path=Value,StringFormat=Poziom suwaka {0}}"/>
+
+            <Label Text="{Binding Source={x:Reference levelSlider},Path=Value,StringFormat=Poziom suwaka {0}}"
+                   FontSize="{Binding Source={x:Reference levelSlider},Path=Value}"/>
+
+            <Label BindingContext="{x:Reference levelSlider}"
+                   Text="{Binding Path=Value,StringFormat=Poziom suwaka {0}}"
+                   FontSize="{Binding Value}"/>
+
+            <Label Text="Podaj komunikat:"/>
+            <Entry Text="{Binding Message}"/>
+            <Button Text="Akcja"
+                    Clicked="Button_Clicked"/>
+            <Label Text="{Binding ProcessedMessage}"/>
+
+            <Label VerticalOptions="EndAndExpand"
+                   HorizontalOptions="Center"
+                   Text="To jest label"
+                   Margin="0,0,0,100"
+                   x:Name="rotateLabel"/>
+
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>
