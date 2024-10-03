@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MeasurementConverterMauiApp.MainPage"
+             x:Name="thisPage"
+             BindingContext="{x:Reference thisPage}">
+
+    <StackLayout>
+        <StackLayout Orientation="Horizontal"
+                     HorizontalOptions="CenterAndExpand">
+            <StackLayout Margin="50,0,50,0">
+                <Label Text="Miara źródłowa"/>
+                <Picker HorizontalOptions="Center"
+                        ItemsSource="{Binding MeasuresCollection}"
+                        SelectedItem="{Binding SelectedMeasuresFrom}"
+                        ItemDisplayBinding="{Binding Name}"/>
+            </StackLayout>
+            <StackLayout Margin="50,0,50,0">
+                <Label Text="Miara docelowa"/>
+                <Picker HorizontalOptions="Center"
+                        ItemsSource="{Binding MeasuresCollection}"
+                        SelectedItem="{Binding SelectedMeasuresTo}"
+                        ItemDisplayBinding="{Binding Name}"/>
+            </StackLayout>
+        </StackLayout>
+        <Label Text="Podaj daną:"/>
+        <Entry Text="{Binding StrValue}"/>
+        <Button Text="Oblicz"
+                HorizontalOptions="Center"
+                Margin="0,10,0,10"
+                Clicked="Button_Clicked"/>
+        <Label HorizontalOptions="Center"
+               Text="{Binding ResultConverter}"/>
+    </StackLayout>
+
+</ContentPage>
