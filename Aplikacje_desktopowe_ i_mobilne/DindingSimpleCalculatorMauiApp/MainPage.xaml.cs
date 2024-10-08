@@ -10,7 +10,6 @@
         public bool IsOperationDiv { get; set; }
 
         private string returnMessage;
-
         public string ReturnMessage
         {
             get { return returnMessage; }
@@ -18,7 +17,6 @@
         }
 
         private Color returnMessageColor;
-
         public Color ReturnMessageColor
         {
             get { return returnMessageColor; }
