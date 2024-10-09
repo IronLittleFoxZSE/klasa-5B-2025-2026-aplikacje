@@ -4,7 +4,7 @@
              x:Class="MvvmSimpleCalculatorMauiApp.MainPage"
              xmlns:local="clr-namespace:MvvmSimpleCalculatorMauiApp">
     <ContentPage.BindingContext>
-        <CalculatorViewModel/>
+        <local:CalculatorViewModel/>
     </ContentPage.BindingContext>
 
     <ScrollView>
@@ -12,46 +12,46 @@
 
             <StackLayout Orientation="Horizontal">
                 <Label Text="Pierwsza liczba:"
-               VerticalOptions="Center"
-               Background="Aquamarine"/>
+                       VerticalOptions="Center"
+                       Background="Aquamarine"/>
                 <Entry HorizontalOptions="FillAndExpand"
-               Placeholder="Tutaj wpisz pierwszą liczbę"
-               Text="{Binding FirstNumber}"/>
+                       Placeholder="Tutaj wpisz pierwszą liczbę"
+                       Text="{Binding FirstNumber}"/>
             </StackLayout>
 
             <StackLayout Orientation="Horizontal">
                 <Label Text="Druga liczba:"
-               VerticalOptions="Center"
-               Background="Aquamarine"/>
+                       VerticalOptions="Center"
+                       Background="Aquamarine"/>
                 <Entry HorizontalOptions="FillAndExpand"
-               Placeholder="Tutaj wpisz drugą liczbę"
-               Text="{Binding SecondNumber}"/>
+                       Placeholder="Tutaj wpisz drugą liczbę"
+                       Text="{Binding SecondNumber}"/>
             </StackLayout>
 
             <Label Text="Opcje:"
-           FontSize="20"
-           FontFamily="Arial"
-           FontAttributes="Bold"/>
+                   FontSize="20"
+                   FontFamily="Arial"
+                   FontAttributes="Bold"/>
 
             <RadioButton Content="+"
-                 IsChecked="{Binding IsOperationAdd}"/>
+                         IsChecked="{Binding IsOperationAdd}"/>
             <RadioButton Content="-"
-                 IsChecked="{Binding IsOperationSub}"/>
+                         IsChecked="{Binding IsOperationSub}"/>
             <RadioButton Content="*"
-                 IsChecked="{Binding IsOperationMul}"/>
+                         IsChecked="{Binding IsOperationMul}"/>
             <RadioButton Content="/"
-                 IsChecked="{Binding IsOperationDiv}"/>
+                         IsChecked="{Binding IsOperationDiv}"/>
 
             <Button Text="Oblicz"
-            HorizontalOptions="Center"
-            WidthRequest="200"
-            HeightRequest="100"
-            FontSize="40"
-            Background="BurlyWood"
-            Clicked="Button_Clicked"/>
+                    HorizontalOptions="Center"
+                    WidthRequest="200"
+                    HeightRequest="100"
+                    FontSize="40"
+                    Background="BurlyWood"
+                    Command="{Binding CalaculateCommand}"/>
 
             <Label Text="{Binding ReturnMessage}"
-               TextColor="{Binding ReturnMessageColor}"/>
+                   TextColor="{Binding ReturnMessageColor}"/>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

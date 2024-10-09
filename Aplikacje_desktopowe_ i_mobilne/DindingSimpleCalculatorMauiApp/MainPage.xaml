@@ -6,8 +6,7 @@
              BindingContext="{x:Reference thisPage}">
 
     <ScrollView>
-        <VerticalStackLayout 
-        Spacing="10">
+        <VerticalStackLayout Spacing="10">
 
             <StackLayout Orientation="Horizontal">
                 <Label Text="Pierwsza liczba:"

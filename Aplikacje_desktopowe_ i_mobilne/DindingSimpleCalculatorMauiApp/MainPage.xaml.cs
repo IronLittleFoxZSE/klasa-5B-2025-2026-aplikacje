@@ -2,6 +2,7 @@
 {
     public partial class MainPage : ContentPage
     {
+
         public string FirstNumber { get; set; }
         public string SecondNumber { get; set; }
         public bool IsOperationAdd { get; set; }
@@ -37,7 +38,7 @@
                 ReturnMessageColor = new Color(255, 0, 0);
                 return;
             }
-
+            ttt.
             if (!int.TryParse(SecondNumber, out int secondNumber))
             {
                 //komunikat o błędzie
