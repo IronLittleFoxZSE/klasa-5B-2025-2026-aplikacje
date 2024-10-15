@@ -61,9 +61,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MeasurementConverterMauiApp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CollectionViewMauiApp", "CollectionViewMauiApp\CollectionViewMauiApp.csproj", "{F3C1B813-F896-471C-8C01-4ADF63E532AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DindingSimpleCalculatorMauiApp", "DindingSimpleCalculatorMauiApp\DindingSimpleCalculatorMauiApp.csproj", "{6EC080E9-1D7E-4B61-84E0-C275BD47BB3D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DindingSimpleCalculatorMauiApp", "DindingSimpleCalculatorMauiApp\DindingSimpleCalculatorMauiApp.csproj", "{6EC080E9-1D7E-4B61-84E0-C275BD47BB3D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmSimpleCalculatorMauiApp", "MvvmSimpleCalculatorMauiApp\MvvmSimpleCalculatorMauiApp.csproj", "{C0DF981A-0BB5-4538-BAB8-9152136A4AF5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MvvmSimpleCalculatorMauiApp", "MvvmSimpleCalculatorMauiApp\MvvmSimpleCalculatorMauiApp.csproj", "{C0DF981A-0BB5-4538-BAB8-9152136A4AF5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculatorMauiApp", "CalculatorMauiApp\CalculatorMauiApp.csproj", "{16866B89-1036-4CA7-8A63-07634A2FCBF1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -334,6 +336,24 @@ Global
 		{C0DF981A-0BB5-4538-BAB8-9152136A4AF5}.Release|x86.ActiveCfg = Release|Any CPU
 		{C0DF981A-0BB5-4538-BAB8-9152136A4AF5}.Release|x86.Build.0 = Release|Any CPU
 		{C0DF981A-0BB5-4538-BAB8-9152136A4AF5}.Release|x86.Deploy.0 = Release|Any CPU
+		{16866B89-1036-4CA7-8A63-07634A2FCBF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16866B89-1036-4CA7-8A63-07634A2FCBF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16866B89-1036-4CA7-8A63-07634A2FCBF1}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{16866B89-1036-4CA7-8A63-07634A2FCBF1}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{16866B89-1036-4CA7-8A63-07634A2FCBF1}.Debug|x64.Build.0 = Debug|Any CPU
+		{16866B89-1036-4CA7-8A63-07634A2FCBF1}.Debug|x64.Deploy.0 = Debug|Any CPU
+		{16866B89-1036-4CA7-8A63-07634A2FCBF1}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{16866B89-1036-4CA7-8A63-07634A2FCBF1}.Debug|x86.Build.0 = Debug|Any CPU
+		{16866B89-1036-4CA7-8A63-07634A2FCBF1}.Debug|x86.Deploy.0 = Debug|Any CPU
+		{16866B89-1036-4CA7-8A63-07634A2FCBF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16866B89-1036-4CA7-8A63-07634A2FCBF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16866B89-1036-4CA7-8A63-07634A2FCBF1}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{16866B89-1036-4CA7-8A63-07634A2FCBF1}.Release|x64.ActiveCfg = Release|Any CPU
+		{16866B89-1036-4CA7-8A63-07634A2FCBF1}.Release|x64.Build.0 = Release|Any CPU
+		{16866B89-1036-4CA7-8A63-07634A2FCBF1}.Release|x64.Deploy.0 = Release|Any CPU
+		{16866B89-1036-4CA7-8A63-07634A2FCBF1}.Release|x86.ActiveCfg = Release|Any CPU
+		{16866B89-1036-4CA7-8A63-07634A2FCBF1}.Release|x86.Build.0 = Release|Any CPU
+		{16866B89-1036-4CA7-8A63-07634A2FCBF1}.Release|x86.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -366,6 +386,7 @@ Global
 		{F3C1B813-F896-471C-8C01-4ADF63E532AC} = {616EA6CC-93D4-4BF3-BA42-2F87BA0258F3}
 		{6EC080E9-1D7E-4B61-84E0-C275BD47BB3D} = {616EA6CC-93D4-4BF3-BA42-2F87BA0258F3}
 		{C0DF981A-0BB5-4538-BAB8-9152136A4AF5} = {616EA6CC-93D4-4BF3-BA42-2F87BA0258F3}
+		{16866B89-1036-4CA7-8A63-07634A2FCBF1} = {616EA6CC-93D4-4BF3-BA42-2F87BA0258F3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2E2DA32F-0FC6-4252-9FC0-CD664838E829}
