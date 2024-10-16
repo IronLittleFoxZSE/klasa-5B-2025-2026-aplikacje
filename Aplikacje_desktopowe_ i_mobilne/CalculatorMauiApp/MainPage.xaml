@@ -80,19 +80,27 @@
         <Button Text="+"
                 Grid.Row="1"
                 Grid.Column="3"
-                Margin="5"/>
+                Margin="5"
+                Command="{Binding OperationCommand}"
+                CommandParameter="{Binding Text,Source={RelativeSource Self}}"/>
         <Button Text="-"
                 Grid.Row="2"
                 Grid.Column="3"
-                Margin="5"/>
+                Margin="5"
+                Command="{Binding OperationCommand}"
+                CommandParameter="{Binding Text,Source={RelativeSource Self}}"/>
         <Button Text="*"
                 Grid.Row="3"
                 Grid.Column="3"
-                Margin="5"/>
+                Margin="5"
+                Command="{Binding OperationCommand}"
+                CommandParameter="{Binding Text,Source={RelativeSource Self}}"/>
         <Button Text="/"
                 Grid.Row="4"
                 Grid.Column="3"
-                Margin="5"/>
+                Margin="5"
+                Command="{Binding OperationCommand}"
+                CommandParameter="{Binding Text,Source={RelativeSource Self}}"/>
 
         <Button Text="="
                 Grid.Row="1"
