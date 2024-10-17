@@ -36,9 +36,14 @@ namespace CalculatorMauiApp.ViewModels
                         }
                         else
                         {
-                            prevValue = CalculationResult;
+                            if (!isOperationEquilAction)
+                            {
+                                prevValue = CalculationResult;
+                            }
+                            
                             CalculationResult = digit;
                             isOperationAction = false;
+                            isOperationEquilAction = false;
                         }
                     });
                 return numericCommand; 
@@ -60,6 +65,26 @@ namespace CalculatorMauiApp.ViewModels
                         isOperationAction = true;
                     });
                 return operationCommand;
+            }
+        }
+
+        private Command operationEquilCommand;
+        public Command OperationEquilCommand
+        {
+            get
+            {
+                if (operationEquilCommand == null)
+                    operationEquilCommand = new Command<string>((operationSign) =>
+                    {
+                        if (isOperationAction)
+                            return;
+                        CalculationResult = Calculate(prevValue, CalculationResult, prevOperationSign);
+                        prevOperationSign = "*";    //"+"
+                        prevValue = 1;              //0
+                        isOperationAction = true;
+                        isOperationEquilAction = true;
+                    });
+                return operationEquilCommand;
             }
         }
 
@@ -89,6 +114,7 @@ namespace CalculatorMauiApp.ViewModels
         private string prevOperationSign = "*";
         private int prevValue = 1;
         private bool isOperationAction = false;
+        private bool isOperationEquilAction = false;
 
     }
 }

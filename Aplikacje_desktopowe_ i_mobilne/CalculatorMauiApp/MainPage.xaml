@@ -106,7 +106,9 @@
                 Grid.Row="1"
                 Grid.Column="4"
                 Grid.RowSpan="4"
-                Margin="5"/>
+                Margin="5"
+                Command="{Binding OperationEquilCommand}"
+                CommandParameter="{Binding Text,Source={RelativeSource Self}}"/>
     </Grid>
 
 </ContentPage>
