@@ -40,7 +40,7 @@ namespace CalculatorMauiApp.ViewModels
                             {
                                 prevValue = CalculationResult;
                             }
-                            
+
                             CalculationResult = digit;
                             isOperationAction = false;
                             isOperationEquilAction = false;
