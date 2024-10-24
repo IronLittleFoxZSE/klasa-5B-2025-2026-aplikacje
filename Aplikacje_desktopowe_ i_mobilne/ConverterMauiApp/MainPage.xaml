@@ -6,6 +6,7 @@
     <ContentPage.Resources>
         <converters:GradeToTextGradeConverter x:Key="GradeToTextGradeConverter"/>
         <converters:BoolToColorConverter x:Key="BoolToColorConverter"/>
+        <converters:RgbToColorConverter x:Key="RgbToColorConverter"/>
         <converters:BoolToTextConverter x:Key="BoolToTextConverter"
                                         TrueMessage="Dziękuję"
                                         FalseMessage="Szkoda :("/>
@@ -61,6 +62,78 @@
                 </Label.Text>
             </Label>
         </StackLayout>
+
+        <Label Text="Czerwony"/>
+        <Slider x:Name="redSlider"
+                Minimum="0"
+                Maximum="255">
+            <Slider.MinimumTrackColor>
+                <MultiBinding Converter="{x:StaticResource RgbToColorConverter}">
+                    <Binding Source="{x:Reference redSlider}" Path="Value"/>
+                    <Binding>
+                        <Binding.Source>
+                            <x:Double>0</x:Double>
+                        </Binding.Source>
+                    </Binding>
+                    <Binding>
+                        <Binding.Source>
+                            <x:Double>0</x:Double>
+                        </Binding.Source>
+                    </Binding>
+                </MultiBinding>
+            </Slider.MinimumTrackColor>
+        </Slider>
+        <Label Text="Zielony"/>
+        <Slider x:Name="greenSlider"
+                Minimum="0"
+                Maximum="255">
+            <Slider.MinimumTrackColor>
+                <MultiBinding Converter="{x:StaticResource RgbToColorConverter}">
+                    <Binding>
+                        <Binding.Source>
+                            <x:Double>0</x:Double>
+                        </Binding.Source>
+                    </Binding>
+                    <Binding Source="{x:Reference greenSlider}" Path="Value"/>
+                    <Binding>
+                        <Binding.Source>
+                            <x:Double>0</x:Double>
+                        </Binding.Source>
+                    </Binding>
+                </MultiBinding>
+            </Slider.MinimumTrackColor>
+        </Slider>
+        <Label Text="Niebieski"/>
+        <Slider x:Name="blueSlider"
+                Minimum="0"
+                Maximum="255">
+            <Slider.MinimumTrackColor>
+                <MultiBinding Converter="{x:StaticResource RgbToColorConverter}">
+                    <Binding>
+                        <Binding.Source>
+                            <x:Double>0</x:Double>
+                        </Binding.Source>
+                    </Binding>
+                    <Binding>
+                        <Binding.Source>
+                            <x:Double>0</x:Double>
+                        </Binding.Source>
+                    </Binding>
+                    <Binding Source="{x:Reference blueSlider}" Path="Value"/>
+                </MultiBinding>
+            </Slider.MinimumTrackColor>
+        </Slider>
+        <BoxView HeightRequest="100"
+                 WidthRequest="100"
+                 HorizontalOptions="Center">
+            <BoxView.Color>
+                <MultiBinding Converter="{x:StaticResource RgbToColorConverter}">
+                    <Binding Source="{x:Reference redSlider}" Path="Value"/>
+                    <Binding Source="{x:Reference greenSlider}" Path="Value"/>
+                    <Binding Source="{x:Reference blueSlider}" Path="Value"/>
+                </MultiBinding>
+            </BoxView.Color>
+        </BoxView>
 
     </StackLayout>
 
