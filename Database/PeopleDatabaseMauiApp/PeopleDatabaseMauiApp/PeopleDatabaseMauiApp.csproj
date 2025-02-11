@@ -19,6 +19,8 @@
 		<SingleProject>true</SingleProject>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
+		<WindowPackageType>None</WindowPackageType>
+		
 
 		<!-- Display name -->
 		<ApplicationTitle>PeopleDatabaseMauiApp</ApplicationTitle>
@@ -60,10 +62,6 @@
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.1" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="Database\" />
 	</ItemGroup>
 
 </Project>

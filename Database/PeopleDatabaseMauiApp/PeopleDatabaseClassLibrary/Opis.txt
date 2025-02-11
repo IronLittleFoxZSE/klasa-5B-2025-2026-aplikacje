@@ -1,0 +1,19 @@
+﻿1. Tworzymy nowy projekt jako Class Library
+
+2. Instalujemy nugety
+Microsoft.EntityFrameworkCore				Version="8.0.12"
+Microsoft.EntityFrameworkCore.Relational	Version="8.0.12" 
+Microsoft.EntityFrameworkCore.Tools			Version="8.0.12"
+Pomelo.EntityFrameworkCore.MySql			Version="8.0.2" 
+
+3. Kasujemy plik Class1.cs
+
+4. Ustawiamy projekt jako startowy
+
+5. Otwieramy konsolę menadżera pakietów 
+
+6. Zmieniamy "Default project" na class library
+
+7. Wklejamy polecenie
+
+Scaffold-DbContext "server=localhost;database=people;user=root" Pomelo.EntityFrameworkCore.MySql -OutputDir Models -Context PeopleDBContext -ContextDir .
