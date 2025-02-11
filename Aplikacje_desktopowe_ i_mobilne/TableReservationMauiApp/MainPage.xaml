@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TableReservationMauiApp.MainPage"
+             xmlns:viewModels="clr-namespace:TableReservationMauiApp.ViewModels"
+             xmlns:utils="clr-namespace:TableReservationMauiApp.Utils">
+    <ContentPage.BindingContext>
+        <viewModels:ReservationViewModel/>
+    </ContentPage.BindingContext>
+    <StackLayout>
+        <Label Text="Wygląd sali:"/>
+        <Grid utils:GridHelpers.ColumnCount="{Binding ColumnCount}"
+              utils:GridHelpers.RowCount="{Binding RowCount}"
+              BindableLayout.ItemsSource="{Binding Tables}">
+            <BindableLayout.ItemTemplate>
+                <DataTemplate>
+                    <Button Grid.Column="{Binding X}"
+                            Grid.Row="{Binding Y}"
+                            BackgroundColor="{Binding ColorTable}"
+                            Command="{Binding TableCommand}"
+                            CommandParameter="{Binding}"/>
+                </DataTemplate>
+            </BindableLayout.ItemTemplate>
+        </Grid>
+        <StackLayout IsVisible="{Binding ShowReservation}"
+                     Margin="10">
+            <Label Text="Lista rezerwacji"/>
+            <CollectionView ItemsSource="{Binding CurrentSelectedTable.TableReservations}"
+                            SelectionMode="Single"
+                            SelectedItem="{Binding SelectedReservation}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Orientation="Horizontal"
+                                     Spacing="10">
+                            <Label Text="Rezerwacja dla: "/>
+                            <Label Text="{Binding Name}"/>
+                            <Label Text="OD:"/>
+                            <Label Text="{Binding FromTime}"/>
+                            <Label Text="DO:"/>
+                            <Label Text="{Binding ToTime}"/>
+
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Button Text="Dodaj nową rezerwację"
+                    Command="{Binding NewReservationCommand}"
+                    CommandParameter="{Binding CurrentSelectedTable}"
+                    HorizontalOptions="Center"/>
+            <StackLayout Margin="10">
+                <Label Text="Uzupełnij rezerwację"/>
+                <Entry Text="{Binding SelectedReservation.Name}"/>
+                <Label Text="Od:"/>
+                <TimePicker Time="{Binding SelectedReservation.FromTime}"/>
+                <Label Text="Do:"/>
+                <TimePicker Time="{Binding SelectedReservation.ToTime}"/>
+            </StackLayout>
+        </StackLayout>
+
+
+    </StackLayout>
+
+</ContentPage>

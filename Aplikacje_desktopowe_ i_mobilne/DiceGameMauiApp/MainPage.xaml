@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DiceGameMauiApp.MainPage"
+             xmlns:local="clr-namespace:DiceGameMauiApp">
+    <ContentPage.BindingContext>
+        <local:MainPageViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <local:DieceValueToImageNameConverter x:Key="DieceValueToImageNameConverter"/>
+    </ContentPage.Resources>
+    <StackLayout Background="Beige"
+                 Spacing="10">
+        <Label Text="Gra w kości. Autor 0000000000"
+               Background="Brown"
+               TextColor="White"
+               FontSize="20"/>
+        <Button Text="RZUĆ KOŚĆMI"
+                Background="Chocolate"
+                HorizontalOptions="Center"
+                Command="{Binding RollDieceCommand}"/>
+
+        <StackLayout Orientation="Horizontal"
+                     Background="White"
+                     Spacing="60"
+                     BindableLayout.ItemsSource="{Binding DieceValues}">
+            <!--<Image HorizontalOptions="CenterAndExpand"/>-->
+            <BindableLayout.ItemTemplate>
+                <DataTemplate>
+                    <Image Source="{Binding ., Converter={StaticResource DieceValueToImageNameConverter}}"
+                           HorizontalOptions="CenterAndExpand"/>
+                </DataTemplate>
+            </BindableLayout.ItemTemplate>
+        </StackLayout>
+
+        <Label Text="{Binding GameValue,StringFormat='Wynik tego losowania: {0}'}"
+               HorizontalOptions="Center"/>
+
+        <Label Text="{Binding TotalGameValue,StringFormat='Wynik gry: {0}'}"
+               HorizontalOptions="Center"/>
+
+        <Button Text="RESETUJ WYNIK"
+                Background="Chocolate"
+                HorizontalOptions="Center"
+                Command="{Binding ResetCommand}"/>
+
+
+    </StackLayout>
+
+</ContentPage>

@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QuizMauiApp.MainPage"
+             xmlns:viewModels="clr-namespace:QuizMauiApp.ViewModels"
+             xmlns:models="clr-namespace:QuizMauiApp.Model"
+             xmlns:templateSelector="clr-namespace:QuizMauiApp.TemplateSelector">
+    <ContentPage.BindingContext>
+        <viewModels:MainPageViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <DataTemplate x:Key="SingleChoiceTemplate" >
+            <StackLayout Orientation="Horizontal">
+                <RadioButton IsChecked="{Binding IsSelected}" GroupName="AnswerOption"/>
+                <Label Text="{Binding OptionText}"
+                       VerticalOptions="Center"/>
+            </StackLayout>
+        </DataTemplate>
+        <DataTemplate x:Key="MultipleChoiceTemplate" >
+            <StackLayout Orientation="Horizontal">
+                <CheckBox IsChecked="{Binding IsSelected}"/>
+                <Label Text="{Binding OptionText}"
+                       VerticalOptions="Center"/>
+            </StackLayout>
+        </DataTemplate>
+
+        <templateSelector:AnswersTemplateSelector
+            x:Key="AnswersTemplateSelector"
+            SingleChoiceTemplate="{StaticResource SingleChoiceTemplate}"
+            MultipleChoiceTemplate="{StaticResource MultipleChoiceTemplate}"/>
+    </ContentPage.Resources>
+    
+    <StackLayout>
+        <Label Text="Treść pytania:"/>
+        <Label Text="{Binding CurrentQuestion.QuestionText}"
+               FontSize="20"/>
+        <StackLayout BindableLayout.ItemsSource="{Binding CurrentQuestion.AnswerOptions}"
+                     BindableLayout.ItemTemplateSelector="{StaticResource AnswersTemplateSelector}">
+        </StackLayout>
+
+        <Grid ColumnDefinitions="*,*,*,*,*">
+            <Button Text="Poprzednie pytanie"
+                    Grid.Column="0"
+                    Command="{Binding PrevQuestionCommand}"/>
+            <Button Text="Kolejne pytanie"
+                    Grid.Column="1"
+                    Command="{Binding NextQuestionCommand}"/>
+            <Button Text="Sprawdź"
+                    Grid.Column="3"
+                    Command="{Binding CheckQuestionsCommand}"/>
+            <Button Text="Od nowa"
+                    Grid.Column="4"/>
+        </Grid>
+        <Label Text="{Binding TestResultMessage}"/>
+
+    </StackLayout>
+    
+</ContentPage>
