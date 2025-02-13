@@ -26,6 +26,43 @@
                 Command="{Binding CreatePersonCommand}"/>
 
 
+        <Label Text="READ"
+               HorizontalOptions="Center"
+               FontSize="20"/>
+
+        <Label Text="Osoby pełnoletnie:"/>
+        <CollectionView ItemsSource="{Binding People}"
+                        SelectionMode="Single"
+                        SelectedItem="{Binding CurrentPersonSelection}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="{Binding Name}"
+                               Margin="0,10,10,0"/>
+                        <Label Text="{Binding Surname}"
+                               Margin="0,10,10,0"/>
+                        <Label Text="{Binding Age}"
+                               Margin="0,10,10,0"/>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Button Text="Wyświetl"
+                Command="{Binding GetLegalAgePeopleCommand}"/>
+
+
+        <Label Text="Update"
+               HorizontalOptions="Center"
+               FontSize="20"/>
+        <Label Text="Imię:"/>
+        <Entry Text="{Binding CurrentPersonSelection.Name}"/>
+        <Label Text="Nazwisko:"/>
+        <Entry Text="{Binding CurrentPersonSelection.Surname}"/>
+        <Label Text="Wiek:"/>
+        <Entry Text="{Binding CurrentPersonSelection.Age}"/>
+        <Button Text="Zapisz zmiany"
+                Command="{Binding SaveChangesCommand}"/>
     </StackLayout>
 
 </ContentPage>

@@ -1,6 +1,8 @@
 ﻿using PeopleDatabaseClassLibrary;
+using PeopleDatabaseClassLibrary.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -45,6 +47,57 @@ namespace PeopleDatabaseMauiApp
 
                 return createPersonCommand;
             }
+        }
+
+        public ObservableCollection<Person> People { get; set; }
+
+        public Command getLegalAgePeopleCommand;
+        public Command GetLegalAgePeopleCommand
+        {
+            get
+            {
+                if (getLegalAgePeopleCommand == null)
+                    getLegalAgePeopleCommand = new Command(() =>
+                    {
+                        List<Person> legalAgePeople = peopleRepository.GetLegalAgePeople();
+                        People.Clear();
+                        foreach (Person person in legalAgePeople)
+                        {
+                            People.Add(person);
+                        }
+                    });
+
+                return getLegalAgePeopleCommand;
+            }
+        }
+
+        private Person currentPersonSelection;
+
+        public Person CurrentPersonSelection
+        {
+            get { return currentPersonSelection; }
+            set { currentPersonSelection = value; OnPropertyChanged(); }
+        }
+
+        public Command saveChangesCommand;
+        public Command SaveChangesCommand
+        {
+            get
+            {
+                if (saveChangesCommand == null)
+                    saveChangesCommand = new Command(() =>
+                    {
+                        if (currentPersonSelection != null)
+                            peopleRepository.SaveChangePerson(currentPersonSelection);
+                    });
+
+                return saveChangesCommand;
+            }
+        }
+
+        public MainPageViewModel()
+        {
+            People = new ObservableCollection<Person>();
         }
     }
 }
