@@ -33,13 +33,15 @@ namespace PeopleDatabaseClassLibrary
         public List<Person> GetLegalAgePeople()
         {
             /*
-                select Age
+              select *
                 from People p
-                where Age >= 18
-                order by Name asc, Surname desc
+           left join Adreses a on a.id = p.AdressId
+               where Age >= 18
+            order by Name asc, Surname desc
             */
             return dbContext
                 .People
+                .Include(p => p.Adress)
                 //.AsNoTracking()
                 .Where(p => p.Age >= 18)
                 .OrderBy(p => p.Name)

@@ -17,6 +17,8 @@ public partial class PeopleDBContext : DbContext
     {
     }
 
+    public virtual DbSet<Adrese> Adreses { get; set; }
+
     public virtual DbSet<Person> People { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -28,16 +30,20 @@ public partial class PeopleDBContext : DbContext
             .UseCollation("utf8mb4_general_ci")
             .HasCharSet("utf8mb4");
 
+        modelBuilder.Entity<Adrese>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PRIMARY");
+        });
+
         modelBuilder.Entity<Person>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PRIMARY");
 
-            entity.ToTable("person");
+            entity.Property(e => e.AdressId).HasDefaultValueSql("'1'");
 
-            entity.Property(e => e.Id).HasColumnType("int(11)");
-            entity.Property(e => e.Age).HasColumnType("int(11)");
-            entity.Property(e => e.Name).HasMaxLength(20);
-            entity.Property(e => e.Surname).HasMaxLength(50);
+            entity.HasOne(d => d.Adress).WithMany(p => p.People)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("fk_adress");
         });
 
         OnModelCreatingPartial(modelBuilder);

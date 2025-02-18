@@ -16,11 +16,4 @@ Pomelo.EntityFrameworkCore.MySql			Version="8.0.2"
 
 7. Wklejamy polecenie
 
-Scaffold-DbContext 
-"server=localhost;database=people;user=root" 
-Pomelo.EntityFrameworkCore.MySql 
--OutputDir Models 
--Context PeopleDBContext 
--ContextDir .
--Force
--DataAnnotations
+Scaffold-DbContext "server=localhost;database=people;user=root" Pomelo.EntityFrameworkCore.MySql -OutputDir Models -Context PeopleDBContext -ContextDir . -Force -DataAnnotations
