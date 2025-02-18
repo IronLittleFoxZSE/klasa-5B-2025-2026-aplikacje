@@ -1,4 +1,5 @@
-﻿using PeopleDatabaseClassLibrary.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using PeopleDatabaseClassLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,6 +40,7 @@ namespace PeopleDatabaseClassLibrary
             */
             return dbContext
                 .People
+                //.AsNoTracking()
                 .Where(p => p.Age >= 18)
                 .OrderBy(p => p.Name)
                 .ThenByDescending(p => p.Surname)
@@ -54,6 +56,16 @@ namespace PeopleDatabaseClassLibrary
                 personToUpdate.Name= currentPersonSelection.Name;
                 personToUpdate.Surname= currentPersonSelection.Surname;
                 personToUpdate.Age= currentPersonSelection.Age;
+                dbContext.SaveChanges();
+            }
+        }
+
+        public void DeletePerson(int id)
+        {
+            Person personToDelete = dbContext.People.FirstOrDefault(p => p.Id == id);
+            if (personToDelete != null)
+            {
+                dbContext.People.Remove(personToDelete);
                 dbContext.SaveChanges();
             }
         }

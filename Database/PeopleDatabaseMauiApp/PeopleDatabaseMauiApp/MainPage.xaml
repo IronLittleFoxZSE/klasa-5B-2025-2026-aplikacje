@@ -7,7 +7,7 @@
     <ContentPage.BindingContext>
         <viewModel:MainPageViewModel/>
     </ContentPage.BindingContext>
-    
+
     <StackLayout>
         <Label Text="CREATE"
                HorizontalOptions="Center"
@@ -24,7 +24,6 @@
                 HorizontalOptions="Center"
                 Margin="0,10,0,0"
                 Command="{Binding CreatePersonCommand}"/>
-
 
         <Label Text="READ"
                HorizontalOptions="Center"
@@ -51,8 +50,7 @@
         <Button Text="Wyświetl"
                 Command="{Binding GetLegalAgePeopleCommand}"/>
 
-
-        <Label Text="Update"
+        <Label Text="UPDATE"
                HorizontalOptions="Center"
                FontSize="20"/>
         <Label Text="Imię:"/>
@@ -63,6 +61,12 @@
         <Entry Text="{Binding CurrentPersonSelection.Age}"/>
         <Button Text="Zapisz zmiany"
                 Command="{Binding SaveChangesCommand}"/>
+
+        <Label Text="DELETE"
+               HorizontalOptions="Center"
+               FontSize="20"/>
+        <Button Text="Skasuj"
+                Command="{Binding DeletePersonCommand}"/>
     </StackLayout>
 
 </ContentPage>
