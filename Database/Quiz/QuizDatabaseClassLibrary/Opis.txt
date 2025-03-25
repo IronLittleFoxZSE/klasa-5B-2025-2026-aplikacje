@@ -1,0 +1,35 @@
+﻿1. Tworzenie bazy
+
+CREATE DATABASE Quiz;
+
+USE Quiz;
+
+CREATE TABLE Question (
+    Id INT AUTO_INCREMENT PRIMARY KEY,
+    QuestionText TEXT NOT NULL,
+    QuestionType INT NOT NULL
+);
+
+CREATE TABLE Answers (
+    Id INT AUTO_INCREMENT PRIMARY KEY,
+    AnswerText TEXT NOT NULL,
+    IsCorrect BOOLEAN NOT NULL,
+    QuestionId INT NOT NULL,
+    FOREIGN KEY (QuestionId) REFERENCES Question(Id) ON DELETE CASCADE
+);
+
+2. Do pliku csproj dodaję wpisy
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.12" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="8.0.12" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.12">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="8.0.2" />
+	</ItemGroup>
+
+3. Wywołuję polecenie
+
+Scaffold-DbContext "server=localhost;database=quiz;user=root" Pomelo.EntityFrameworkCore.MySql -OutputDir Models -Context QuizDBContext -ContextDir . -Force -DataAnnotations

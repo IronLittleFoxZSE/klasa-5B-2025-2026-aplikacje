@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35521.163 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuizDatabaseClassLibrary", "QuizDatabaseClassLibrary\QuizDatabaseClassLibrary.csproj", "{0ED0D1ED-3428-4004-A0E8-8F3F13831173}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuizMauiApp", "QuizMauiApp\QuizMauiApp.csproj", "{23B3EB71-3FD5-4FD3-9C06-5E9D8098CC13}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0ED0D1ED-3428-4004-A0E8-8F3F13831173}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0ED0D1ED-3428-4004-A0E8-8F3F13831173}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0ED0D1ED-3428-4004-A0E8-8F3F13831173}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0ED0D1ED-3428-4004-A0E8-8F3F13831173}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23B3EB71-3FD5-4FD3-9C06-5E9D8098CC13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23B3EB71-3FD5-4FD3-9C06-5E9D8098CC13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23B3EB71-3FD5-4FD3-9C06-5E9D8098CC13}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{23B3EB71-3FD5-4FD3-9C06-5E9D8098CC13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23B3EB71-3FD5-4FD3-9C06-5E9D8098CC13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23B3EB71-3FD5-4FD3-9C06-5E9D8098CC13}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
