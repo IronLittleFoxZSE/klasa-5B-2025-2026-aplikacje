@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Egzamin2025StyczenPierwszyGaleriaMauiApp.MainPage"
+             xmlns:viewModel="clr-namespace:Egzamin2025StyczenPierwszyGaleriaMauiApp">
+    <ContentPage.BindingContext>
+        <viewModel:MainViewModel/>
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <StackLayout>
+            <Label Text="Kategoria zdjęć" FontSize="20"/>
+            <StackLayout Orientation="Horizontal">
+                <CheckBox IsChecked="{Binding ShowFlowers}"/>
+                <Label Text="Kwiaty" VerticalOptions="Center"/>
+                <CheckBox IsChecked="{Binding ShowAnimals}"/>
+                <Label Text="Zwierzeta" VerticalOptions="Center"/>
+                <CheckBox IsChecked="{Binding ShowCars}"/>
+                <Label Text="Samochody" VerticalOptions="Center"/>
+            </StackLayout>
+
+            <FlexLayout Direction="Row" Wrap="Wrap"
+                        BindableLayout.ItemsSource="{Binding Gallery}">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Image Source="{Binding FileName}" 
+                                   WidthRequest="200" 
+                                   HeightRequest="200"
+                                   Margin="5"/>
+                            <Label FontSize="15" Text="{Binding Downloads, StringFormat=Lista pobrań: {0}}"/>
+                            <Button Text="Pobierz" 
+                                    BackgroundColor="Green" 
+                                    HorizontalOptions="Start"
+                                    Command="{Binding DownloadCommand}"
+                                    CommandParameter="{Binding}"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </FlexLayout>
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>
