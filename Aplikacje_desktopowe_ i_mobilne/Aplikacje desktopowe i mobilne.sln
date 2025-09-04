@@ -85,6 +85,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MobilnaDesktopowa", "Mobiln
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Egzamin2025StyczenPierwszyGaleriaMauiApp", "Egzamin2025StyczenPierwszyGaleriaMauiApp\Egzamin2025StyczenPierwszyGaleriaMauiApp.csproj", "{148738F4-2A5E-4AED-85C5-30387525796C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NavigationMauiApp", "NavigationMauiApp\NavigationMauiApp.csproj", "{95450714-61D6-4EA2-BB44-1D76FCD4C9F7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -480,6 +482,24 @@ Global
 		{148738F4-2A5E-4AED-85C5-30387525796C}.Release|x86.ActiveCfg = Release|Any CPU
 		{148738F4-2A5E-4AED-85C5-30387525796C}.Release|x86.Build.0 = Release|Any CPU
 		{148738F4-2A5E-4AED-85C5-30387525796C}.Release|x86.Deploy.0 = Release|Any CPU
+		{95450714-61D6-4EA2-BB44-1D76FCD4C9F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95450714-61D6-4EA2-BB44-1D76FCD4C9F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95450714-61D6-4EA2-BB44-1D76FCD4C9F7}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{95450714-61D6-4EA2-BB44-1D76FCD4C9F7}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{95450714-61D6-4EA2-BB44-1D76FCD4C9F7}.Debug|x64.Build.0 = Debug|Any CPU
+		{95450714-61D6-4EA2-BB44-1D76FCD4C9F7}.Debug|x64.Deploy.0 = Debug|Any CPU
+		{95450714-61D6-4EA2-BB44-1D76FCD4C9F7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{95450714-61D6-4EA2-BB44-1D76FCD4C9F7}.Debug|x86.Build.0 = Debug|Any CPU
+		{95450714-61D6-4EA2-BB44-1D76FCD4C9F7}.Debug|x86.Deploy.0 = Debug|Any CPU
+		{95450714-61D6-4EA2-BB44-1D76FCD4C9F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95450714-61D6-4EA2-BB44-1D76FCD4C9F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95450714-61D6-4EA2-BB44-1D76FCD4C9F7}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{95450714-61D6-4EA2-BB44-1D76FCD4C9F7}.Release|x64.ActiveCfg = Release|Any CPU
+		{95450714-61D6-4EA2-BB44-1D76FCD4C9F7}.Release|x64.Build.0 = Release|Any CPU
+		{95450714-61D6-4EA2-BB44-1D76FCD4C9F7}.Release|x64.Deploy.0 = Release|Any CPU
+		{95450714-61D6-4EA2-BB44-1D76FCD4C9F7}.Release|x86.ActiveCfg = Release|Any CPU
+		{95450714-61D6-4EA2-BB44-1D76FCD4C9F7}.Release|x86.Build.0 = Release|Any CPU
+		{95450714-61D6-4EA2-BB44-1D76FCD4C9F7}.Release|x86.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -522,6 +542,7 @@ Global
 		{44B074B8-E087-4744-92C6-17FD0DB13C78} = {6432C47F-262F-4D0A-80E2-9F331243F39D}
 		{B85979BE-FDA9-40EC-96DD-1C9BE5996CE6} = {44B074B8-E087-4744-92C6-17FD0DB13C78}
 		{148738F4-2A5E-4AED-85C5-30387525796C} = {B85979BE-FDA9-40EC-96DD-1C9BE5996CE6}
+		{95450714-61D6-4EA2-BB44-1D76FCD4C9F7} = {616EA6CC-93D4-4BF3-BA42-2F87BA0258F3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2E2DA32F-0FC6-4252-9FC0-CD664838E829}
