@@ -46,7 +46,7 @@ using WinRT.Interop;
             StorageFile file = await picker.PickSaveFileAsync();
             if (file != null)
             {    
-                //await FileIO.WriteTextAsync(file, content);
+                await File.WriteAllText(file.Path, "TO CO MAMY ZAPISAĆ");
             }
         }
 #else
