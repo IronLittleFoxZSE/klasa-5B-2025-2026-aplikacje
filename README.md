@@ -20,3 +20,39 @@ Referat 2
 Czym jest sztuczna inteligencja? — definicje, historia i zastosowania
 
 → Wprowadzenie do pojęcia AI, od klasycznych algorytmów po uczenie maszynowe.
+
+```csharp
+#if WINDOWS
+using Windows.Storage;
+using Windows.Storage.Pickers;
+using WinRT.Interop;
+#endif
+```` 
+
+```csharp
+#if WINDOWS
+        async void SaveFileWindowsAsync(object sender, EventArgs e)
+        {
+            var picker = new FileSavePicker();
+            picker.SuggestedStartLocation = PickerLocationId.DocumentsLibrary;
+            picker.FileTypeChoices.Add("Text file", new List<string> { ".txt" });
+            picker.SuggestedFileName = "Tekst";
+
+            // Powiązanie z oknem MAUI
+            var window = Application.Current.Windows.First().Handler.PlatformView as Microsoft.UI.Xaml.Window;
+            IntPtr hWnd = WindowNative.GetWindowHandle(window);
+            InitializeWithWindow.Initialize(picker, hWnd);
+
+            StorageFile file = await picker.PickSaveFileAsync();
+            if (file != null)
+            {    
+                //await FileIO.WriteTextAsync(file, content);
+            }
+        }
+#else
+        async void SaveFileWindowsAsync(object sender, EventArgs e)
+        {
+
+        }
+#endif
+```` 
